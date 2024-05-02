@@ -64,7 +64,9 @@ export default {
     const login = () => {
       // Simulasi data login yang benar
       const hardcodedUsername = "iam";
+      const hardcodedUsernamePengguna = "user";
       const hardcodedPassword = "123";
+      const hardcodedPasswordPengguna = "123";
 
       // Cek username dan password
       if (
@@ -73,9 +75,14 @@ export default {
       ) {
         // Redirect ke halaman berikutnya
         router.push("/admin");
-      } else {
-        // Tampilkan pesan error
-        alert("Username atau password salah!");
+      }
+
+      if (
+        username.value === hardcodedUsernamePengguna &&
+        password.value === hardcodedPasswordPengguna
+      ) {
+        // Redirect ke halaman berikutnya
+        router.push("/user");
       }
     };
 
